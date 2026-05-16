@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react'
 
+// Get the base URL from Vite (will be '/web-magang/' on GitHub Pages)
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export function useNews() {
   const [articles, setArticles] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('/news-index.json')
+    fetch(`${BASE}/news-index.json`)
       .then(r => {
         if (!r.ok) throw new Error('Gagal memuat berita')
         return r.json()
@@ -34,14 +37,14 @@ export function useArticle(slug) {
     if (!slug) return
 
     setLoading(true)
-    fetch('/news-index.json?t=' + Date.now())
+    fetch(`${BASE}/news-index.json?t=` + Date.now())
       .then(r => r.json())
       .then(data => {
         const found = data.find(a => a.slug === slug)
         if (!found) throw new Error('Artikel tidak ditemukan')
         setArticle(found)
         
-        const contentUrl = `/news/${found.slug}.md?t=` + Date.now()
+        const contentUrl = `${BASE}/news/${found.slug}.md?t=` + Date.now()
         console.log('Fetching content from:', contentUrl)
         return fetch(contentUrl)
       })
