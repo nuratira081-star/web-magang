@@ -35,7 +35,7 @@ export default function Navbar() {
       {/* Institutional Top Bar (Desktop Only) */}
       <div className="hidden md:block bg-[var(--color-primary)] text-white/70 py-2 border-b border-white/10 text-[11px] font-bold uppercase tracking-widest">
         <div className="max-w-[1280px] mx-auto px-10 flex justify-between">
-          <span>IAIN PONTIANAK</span>
+          <span>Fakultas Dakwah dan Komunikasi Islam</span>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Portal Mahasiswa</a>
             <a href="#" className="hover:text-white transition-colors">E-Library</a>
@@ -67,7 +67,7 @@ export default function Navbar() {
                 DEPT<span className="text-[var(--color-accent)]">NEWS</span>
               </span>
               <span className="text-[9px] font-bold text-[var(--color-secondary)] uppercase tracking-[0.2em] leading-none">
-                Akademika Portal
+                Manajemen Dakwah
               </span>
             </div>
           </Link>
