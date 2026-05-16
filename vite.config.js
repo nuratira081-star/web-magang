@@ -51,6 +51,7 @@ function syncNewsPlugin() {
 }
 
 export default defineConfig({
+  base: '/web-magang/',
   plugins: [
     react(),
     tailwindcss(),
