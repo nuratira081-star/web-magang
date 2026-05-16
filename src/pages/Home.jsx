@@ -63,6 +63,10 @@ export default function Home() {
   const { articles, loading } = useNews()
   const featured = articles.slice(0, 3)
 
+  useEffect(() => {
+    document.title = 'Beranda | Portal Berita Departemen'
+  }, [])
+
   return (
     <>
       {/* ── Hero ── */}

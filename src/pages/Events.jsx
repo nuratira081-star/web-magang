@@ -9,7 +9,7 @@ const events = {
       id: 1,
       day: '15',
       month: 'OKT',
-      title: 'Kuliah Umum: Etika AI dalam Riset',
+      title: 'Kuliah Umum Baru: Etika AI dalam Riset',
       time: '10:00 – 12:00',
       location: 'Aula Utama',
       type: 'Akademik',
@@ -186,11 +186,10 @@ export default function Events() {
           <button
             key={m}
             onClick={() => setActiveMonth(m)}
-            className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${
-              activeMonth === m
+            className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-200 ${activeMonth === m
                 ? 'bg-[var(--color-primary)] text-white shadow-md'
                 : 'bg-white border border-[var(--color-outline-variant)] text-[var(--color-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]'
-            }`}
+              }`}
           >
             {m}
           </button>

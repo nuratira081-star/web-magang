@@ -33,6 +33,12 @@ export default function NewsDetail() {
   const { articles } = useNews()
   const related = articles.filter(a => a.slug !== slug).slice(0, 3)
 
+  useEffect(() => {
+    if (article) {
+      document.title = `${article.title} | Portal Berita Departemen`
+    }
+  }, [article])
+
   if (loading) {
     return (
       <div className="max-w-[1280px] mx-auto px-5 md:px-10 py-16 animate-pulse">

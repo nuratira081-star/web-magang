@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import NewsCard from '../components/NewsCard'
 import { useNews } from '../hooks/useNews'
@@ -9,6 +9,10 @@ export default function News() {
   const { articles, loading } = useNews()
   const [searchParams, setSearchParams] = useSearchParams()
   const [activeCategory, setActiveCategory] = useState('Semua')
+
+  useEffect(() => {
+    document.title = 'Portal Berita | Departemen Keunggulan Akademik'
+  }, [])
   
   const searchQuery = searchParams.get('search') || ''
   const setSearchQuery = (val) => {

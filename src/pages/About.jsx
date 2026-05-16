@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const faculty = [
@@ -35,6 +36,10 @@ const values = [
 ]
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'Tentang Kami | Portal Berita Departemen'
+  }, [])
+
   return (
     <div>
       {/* Hero */}
